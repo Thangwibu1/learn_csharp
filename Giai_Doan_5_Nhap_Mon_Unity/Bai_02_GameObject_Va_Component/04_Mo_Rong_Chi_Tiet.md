@@ -234,3 +234,125 @@
 - Sau khi hieu GameObject va Component, bai tiep theo la `Transform`.
 - Day la component co mat tren moi object.
 - Hieu transform se giup ban dat va dieu khien object dung cach.
+
+## 31. Nen doc object theo bo component
+
+- Nhin vao mot enemy, dung voi hoi ten no la gi truoc.
+- Hay xem no co `Renderer`, `Collider`, `Rigidbody`, script nao.
+- Tu danh sach do, ban se doan duoc no co the lam gi.
+- Day la cach doc mot scene theo tu duy Unity.
+
+## 32. Script va component co moi quan he rat thuc te
+
+- File script trong `Project` la dinh nghia.
+- Component script tren object la ban dang chay trong scene.
+- Cung mot file script co the duoc gan cho nhieu object.
+- Moi object se co bo du lieu rieng.
+- Day la ly do mot script co tinh tai su dung rat cao.
+
+## 33. Object logic vo hinh rat quan trong
+
+- Nguoi moi thuong nghi object phai nhin thay duoc.
+- Thuc te rat nhieu object logic khong can hinh anh.
+- `GameManager`, `SpawnPoint`, `DialogueTrigger`, `AudioManager` la vi du ro rang.
+- Chung van la GameObject hop le.
+- Vi vay dung dong nhat object voi hinh anh hien tren man hinh.
+
+## 34. Component la cach Unity day ban tu duy module
+
+- Moi chuc nang nho la mot khoi rieng.
+- Ban co the them, bot, doi, tat tung khoi.
+- Day la cach rat hop voi game, noi object thuong co nhieu mat chuc nang.
+- Cung la cach de team chia viec ro rang hon.
+
+## 35. Khi nao nen tach them component
+
+- Khi script da co nhieu bien khong lien quan.
+- Khi mot logic co the dung lai o object khac.
+- Khi file qua dai va kho doc.
+- Khi mot thay doi nho co nguy co lam hu phan khac.
+- Khi ban khong the giai thich ro script nay chi lam mot viec gi.
+
+## 36. Component dependency can duoc nghi som
+
+- Script movement co the can rigidbody.
+- Script mau co the can UI thanh mau.
+- Script tan cong co the can animator.
+- Nhung dependency can ro rang, khong mo ho.
+- Cang ro rang, cang de debug.
+
+## 37. Thanh phan hien thi va logic nen tach long le
+
+- Renderer chi can lo ve viec hien.
+- Script logic chi can quyet dinh khi nao hien, khi nao tat.
+- Collider lo ve vung tuong tac.
+- Rigidbody lo ve phan vat ly.
+- Tach duoc nhu vay, object se ro mat hon.
+
+## 38. Inspector la noi keo cac manh lai
+
+- Co nhung reference duoc lay tu dong bang `GetComponent`.
+- Co nhung reference nen duoc gan bang tay trong Inspector.
+- Ban can biet chon cach nao gon va an toan hon cho tung truong hop.
+- Day la mot phan cua ky nang lam viec voi component.
+
+## 39. Thanh cong cua Unity den tu do ghep
+
+- Ban khong can viet mot he thong khung cho moi object.
+- Ban lap rap object nhanh bang component co san va script tu viet.
+- Dieu nay rat manh cho prototyping.
+- Dong thoi no cung doi hoi ky luat tach trach nhiem.
+
+## 40. Vi du phan tich player bai ban
+
+- `Transform`: vi tri trong scene.
+- `SpriteRenderer`: hien nhan vat.
+- `Collider2D`: vung va cham.
+- `Rigidbody2D`: vat ly.
+- `PlayerInput`: doc input.
+- `PlayerMovement`: di chuyen.
+- `PlayerShooter`: ban dan.
+- `Health`: mau.
+- `Animator`: animation.
+
+## 41. Vi du phan tich enemy can chien
+
+- `Transform`
+- `SpriteRenderer`
+- `Collider2D`
+- `Rigidbody2D` hoac movement script
+- `EnemyPatrol`
+- `EnemyAttack`
+- `Health`
+- `DropLoot`
+- `Animator`
+
+## 42. Vi du phan tich coin
+
+- `Transform`
+- `SpriteRenderer`
+- `Collider2D` dang trigger
+- `CoinPickup`
+- Co the them `RotateVisual` de quay cho dep
+- Co the them `FloatVisual` de nhap nho theo truc Y
+
+## 43. Vi sao object ten dung van chua du
+
+- Ten `EnemyBoss` khong noi het cach no hoat dong.
+- Nhin component moi biet no co AI nao, co mau, co vat ly hay khong.
+- Ten tot la can.
+- Component ro rang moi la du.
+
+## 44. Doc object de debug nhanh
+
+- Object khong di chuyen: xem movement component co dang bat khong.
+- Object khong va cham: xem collider co khong.
+- Object khong roi: xem rigidbody co khong.
+- Object khong hien: xem renderer co khong.
+- Object loi logic: xem script nao dang gan tren no.
+
+## 45. Tong ket bo sung
+
+- Unity khuyen khich ban lap rap object tu nhieu thanh phan nho.
+- Cang som nghi theo component, ban cang de viet code sach.
+- Day la nen tang de hoc transform, scripting, vat ly va AI ve sau.

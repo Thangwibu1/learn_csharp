@@ -249,3 +249,97 @@ public class SimpleMover : MonoBehaviour
 - `Local` lien quan den cha.
 - `World` lien quan den ca the gioi.
 - Nam vung 5 diem nay, ban da co nen tang transform rat chac.
+
+## 33. Transform la ngon ngu khong gian cua Unity
+
+- Khi nhin mot scene, ban dang nhin mot mang cac transform.
+- Moi object hien dien duoc la nho transform.
+- Ke ca object vo hinh van can co vi tri trong khong gian.
+- Day la ly do transform di theo moi GameObject.
+
+## 34. Khi nao nen sua bang Inspector, khi nao nen sua bang code
+
+- Inspector hop voi dat vi tri co dinh va canh scene.
+- Code hop voi thay doi theo thoi gian hoac theo gameplay.
+- Nhieu bai toan can ca hai: dat goc ban dau bang Inspector, thay doi luc choi bang code.
+- Hieu su ket hop nay se giup quy trinh lam game mem hon.
+
+## 35. Parent lam bien doi cach ta hieu toa do
+
+- Khi object khong co parent, vi tri cua no nhin rat truc tiep.
+- Khi co parent, toa do local tro nen huu ich hon.
+- Day la cach de dat vat trong tay nhan vat, icon tren dau enemy, camera theo nhom object.
+- Cang dung nhieu hierarchy, cang can chac local va world.
+
+## 36. Scale cua cha anh huong con
+
+- Nguoi moi thuong chi nghi den vi tri.
+- Thuc te scale cua object cha cung tac dong object con.
+- Dieu nay co the huu ich trong nhieu hieu ung.
+- Nhung no cung de gay meo hinh, collider la hoac offset kho debug.
+
+## 37. Rotation cua cha cung thay doi huong con
+
+- Khi cha xoay, he truc local cua con cung doi.
+- Vi vay `transform.right` cua object con co the thay doi theo.
+- Day la nguon goc cua nhieu hanh vi hop ly nhung de nham neu chua quen.
+
+## 38. Transform va camera
+
+- Camera khong phai phep mau.
+- No cung chi la mot object co transform.
+- Di chuyen camera la di chuyen transform cua camera.
+- Xoay camera la doi huong nhin.
+- Hieu diem nay giup viec debug `Game view` ro hon.
+
+## 39. Transform va spawn point
+
+- Nhieu he thong spawn chi can mot transform lam moc.
+- Spawn point co the la object rong.
+- No khong can renderer hay logic phuc tap.
+- Transform cua no da du de xac dinh vi tri sinh ra object.
+
+## 40. Transform va waypoint
+
+- Waypoint cung thuong chi la cac transform trong scene.
+- AI, enemy bay, camera rail co the doc cac diem nay.
+- Day la vi du dep cho thay transform khong chi de hien thi ma con la du lieu bo cuc.
+
+## 41. Transform va gizmo
+
+- Gizmo giup ban nhin huong, tam, vung tac dong ngay trong scene.
+- Nhieu script ho tro hoc transform nen ve ray va line theo transform.
+- Day la cach debug rat truc quan.
+
+## 42. Nhung cau hoi can hoi khi object sai vi tri
+
+- No co parent nao khong?
+- Local position hay world position dang duoc sua?
+- Script nao dang sua transform?
+- Animation co dang ghi de transform?
+- Rigidbody co dang quan ly object khong?
+
+## 43. Vi sao transform lien quan den gan nhu moi bai sau
+
+- Movement can transform.
+- Camera can transform.
+- Animation anh huong transform.
+- Spawn point la transform.
+- Waypoint la transform.
+- UI bo cuc van la mot dang bien the cua transform.
+
+## 44. Cach hoc transform nhanh nhat
+
+- Chon object.
+- Sua mot gia tri.
+- Nhin scene doi.
+- Gan object vao parent.
+- Sua lai va so sanh.
+- Ve ray theo huong object.
+- Hoc transform la hoc bang mat va tay rat nhieu.
+
+## 45. Tong ket bo sung
+
+- Transform khong kho vi cong thuc.
+- No kho chu yeu vi nguoi moi chua quen nghi trong khong gian va phan cap.
+- Khi qua duoc doan nay, ban se thay rat nhieu bai Unity tro nen ro rang hon.

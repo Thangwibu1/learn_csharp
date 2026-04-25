@@ -79,6 +79,174 @@ public class SaveData
 
 ## 10. JSON la lua chon de hieu
 
+- JSON de doc bang mat.
+- JSON de debug.
+- JSON phu hop voi beginner vi co the in ra Console va nhin thay du lieu dang o dang nao.
+- Khi du an lon hon, ban co the can nhieu cach toi uu hon, nhung voi giai doan hoc thi JSON rat hop.
+
+## 11. Tai sao save system can don gian luc ban dau
+
+- Nguoi moi hay muon lam save system rat hoanh trang tu ngay dau.
+- Dieu do thuong dan toi roi tung.
+- Save system tot luc ban dau nen dat 3 yeu to:
+- de hieu
+- de test
+- de sua
+
+Neu 3 dieu nay on, ban moi tinh tiep toi chuyen toi uu.
+
+## 12. Save du lieu theo cau hoi thuc te
+
+Hay hoi tung cau:
+
+- Neu tat game bay gio, lan sau quay lai nguoi choi co can biet so vang cu khong?
+- Co.
+- Nguoi choi co can biet object pool da dang giu may vien dan khong?
+- Thuong la khong.
+- Nguoi choi co can biet da mo khoa scene nao chua?
+- Co.
+
+Day la cach nghi dung.
+
+## 13. Save va game design di cung nhau
+
+- Save system khong ton tai tach biet voi game design.
+- Cach game cua ban co checkpoint hay khong se anh huong den save system.
+- Game co inventory lon hay nho se anh huong den save data.
+- Game co level map, chapter, hay open world cung anh huong den cach luu.
+
+## 14. Save toan cuc va save theo scene
+
+- Save toan cuc la du lieu song xuyen suot game.
+- Vi du: vang, item hiem, level nguoi choi, settings.
+- Save theo scene la du lieu gan voi man hien tai.
+- Vi du: cua da mo trong scene do, puzzle da giai trong scene do.
+
+## 15. Co nen tach nhieu file save khong
+
+- Co the.
+- Mot file cho profile.
+- Mot file cho settings.
+- Mot file cho progression.
+- Tuy quy mo du an.
+
+Voi beginner, ban co the bat dau bang mot file save tong hop truoc.
+
+## 16. Save slot la gi
+
+- Save slot la nhieu bo du lieu save doc lap.
+- Nguoi choi co the co nhieu lan choi khac nhau.
+- Moi slot la mot profile rieng.
+
+## 17. Save va bao mat
+
+- PlayerPrefs khong phai la giai phap bao mat.
+- JSON thuong de doc, de sua.
+- Neu game can bao mat hon, can them ma hoa hoac xac minh du lieu.
+- Voi khoa hoc nhap mon, muc tieu la dung va ro rang truoc.
+
+## 18. Save corruption la gi
+
+- La khi file save bi hong, doc khong duoc, thieu du lieu, hoac sai cau truc.
+- Ban can nghi truoc cach xu ly:
+- co fallback du lieu mac dinh
+- co thong bao cho nguoi choi
+- co backup save neu can
+
+## 19. Versioning cho save
+
+- Ve sau, game cap nhat co the thay doi cau truc du lieu save.
+- Khi do save cu co the khong con hop le 100%.
+- Vi vay du an lon thuong co `saveVersion`.
+
+Vi du:
+
+- version 1: chi co gold va level
+- version 2: them inventory
+- version 3: them quest state
+
+## 20. Kiem thu save system nhu the nao
+
+- Save khi o trang thai A.
+- Tat game.
+- Mo game.
+- Load.
+- So sanh ket qua voi trang thai A.
+
+Day la cach kiem thu thuc te nhat.
+
+## 21. Kiem thu canh bien
+
+- Save khi health = 0.
+- Save khi inventory rong.
+- Save khi vua qua checkpoint.
+- Save khi settings o gia tri cuc tri.
+
+## 22. Save va UI
+
+- UI menu save/load khong nen la noi giu logic save chinh.
+- UI chi nen goi vao `SaveSystem`.
+- Logic save van nen nam o he thong rieng.
+
+## 23. Save va architecture sach
+
+- Data class chi giu du lieu.
+- Save system chi lo serialize, deserialize, doc ghi.
+- Game system chi lo chuyen du lieu runtime thanh save data va nguoc lai.
+
+## 24. Sai lam pho bien
+
+- Dung `PlayerPrefs` cho inventory lon.
+- Luu ca object runtime.
+- Khong kiem tra null khi load.
+- Khong co key ro rang.
+- Khong viet duoc buoc debug khi loi xay ra.
+
+## 25. Vi du checklist thiet ke save cho game nho
+
+- Luu player progression?
+- Luu inventory?
+- Luu scene hien tai?
+- Luu checkpoint?
+- Luu settings?
+- Luu quest progress?
+- Luu boss defeated?
+
+## 26. Tu duy rat quan trong
+
+Save system that ra la bai toan mapping du lieu.
+
+- runtime -> save data
+- save data -> runtime
+
+Ban hieu duoc mapping nay la ban da di dung huong.
+
+## 27. Vi du mapping runtime sang save data
+
+- Player current health -> `saveData.currentHealth`
+- Wallet gold -> `saveData.gold`
+- Scene active name -> `saveData.sceneName`
+
+## 28. Vi du mapping save data sang runtime
+
+- `saveData.currentHealth` -> set vao player health
+- `saveData.gold` -> set vao wallet
+- `saveData.sceneName` -> quyet dinh scene can load
+
+## 29. Bai hoc lon rut ra
+
+- Dung du lieu quan trong hon luu nhieu.
+- Ro trach nhiem quan trong hon code "ngau".
+- Save dung, load dung, debug duoc la muc tieu dau tien.
+
+## 30. Tu kiem tra
+
+1. SaveData co nen chua logic gameplay nang khong?
+2. Vi sao save system can duoc test bang cach tat va mo game?
+3. Vi sao key save phai on dinh?
+4. Vi sao save version huu ich?
+5. Vi sao save architecture sach giup du an de mo rong?
+
 - JSON de doc va de debug.
 - Du lieu duoc serialize thanh chuoi.
 - Chuoi duoc ghi ra file.

@@ -78,6 +78,151 @@ public class PlayerHealth : MonoBehaviour
 using UnityEngine;
 using UnityEngine.UI;
 
+## 9. Vi sao event khien code sach hon
+
+- Source khong can giu danh sach class cu the can goi.
+- Moi listener chi lo viec cua minh.
+- Them listener moi khong can sua source qua nhieu.
+
+## 10. Observer pattern va architecture game
+
+- Trong game, nhieu he thong cung nghe mot su kien.
+- Day la kieu bai toan rat tu nhien cho observer.
+- Vi du `OnEnemyKilled` co the duoc nghe boi:
+- score system
+- quest system
+- achievement system
+- analytics system
+
+## 11. Tai sao khong polling moi frame
+
+- Polling la cu moi frame lai hoi du lieu co doi khong.
+- Viec nay thuong vua thua vua lam code bi tan man.
+- Neu du lieu chi doi o mot so su kien ro rang, event hop hon nhieu.
+
+## 12. Event la thong bao, khong phai logic tong hop
+
+- Source nen phat thong bao ngan gon.
+- Khong nen nhan dip event ma nhat them qua nhieu logic khong lien quan vao cung mot noi.
+
+## 13. Listener nen nho, ro trach nhiem
+
+- `HealthBarUI` chi lo UI.
+- `AchievementOnDeath` chi lo thanh tuu.
+- `DeathSoundPlayer` chi lo am thanh.
+
+Day la cach chia nho trach nhiem dep hon.
+
+## 14. Event va decoupling
+
+- Decoupling la giam phu thuoc cứng.
+- Event giup source khong biet cu the ai dang nghe.
+- Day lam he thong de mo rong hon.
+
+## 15. Event va test
+
+- Listener nho thuong de test hon.
+- Ban co the gia lap su kien va xem listener phan ung ra sao.
+
+## 16. Dung event o dau la hop ly
+
+- Health changed
+- Gold changed
+- Quest completed
+- Enemy killed
+- Player died
+- Scene loaded
+
+## 17. Khong nen event hoa moi thu
+
+- Day cung la mot cuc do sai.
+- Neu logic chi rat cuc bo va khong can listener ngoai, khong nhat thiet phai dung event.
+
+## 18. Event static can than trong
+
+- Event static tien cho he thong toan cuc.
+- Nhung no de gay phu thuoc am va kho debug hon.
+- Voi beginner, nen can than.
+
+## 19. Dang ky va huy dang ky
+
+- Trong Unity, `OnEnable`/`OnDisable` la mau rat pho bien.
+- Dang ky khi object bat dau hoat dong.
+- Huy dang ky khi object khong con hoat dong.
+
+## 20. Vi sao quen huy dang ky nguy hiem
+
+- Listener bi pha huy nhung event van giu tham chieu.
+- Co the gay log loi, goi vao object khong hop le, hoac gay hanh vi ky la.
+
+## 21. Event order
+
+- Khi nhieu listener nghe cung mot event, ban can nghi den thu tu hop ly cua he thong.
+- Tuy nhien, thuong listener nen duoc thiet ke sao cho it phu thuoc vao thu tu nay cang tot.
+
+## 22. Event payload
+
+- Payload la du lieu di kem event.
+- Vi du `OnHealthChanged(current, max)`.
+- Payload du thong tin se giup listener tu xu ly ma khong phai hoi them source.
+
+## 23. Dat ten event de hieu
+
+- Dat ten theo y nghia thay doi.
+- `OnHealthChanged`
+- `OnPlayerDied`
+- `OnItemAdded`
+
+Tranh ten mo ho nhu `OnUpdateData`.
+
+## 24. Event va UI
+
+- UI la listener ly tuong.
+- Vi UI thuong chi can cap nhat khi du lieu doi.
+- Event giup UI nhan du lieu dung luc.
+
+## 25. Event va achievement
+
+- Achievement system thuong rat hop voi observer.
+- No nghe nhieu su kien khac nhau va cap nhat tien do.
+
+## 26. Event va audio
+
+- Audio system thuong khong nen bi goi truc tiep tung noi.
+- Event giup phat am thanh theo su kien gameplay mot cach sach hon.
+
+## 27. Event va save trigger
+
+- Sau nay co the dung event cho auto save.
+- Vi du `OnCheckpointReached`.
+- Save system nghe su kien do va luu tien trinh.
+
+## 28. Event va network
+
+- Trong game online, event van huu ich trong client architecture.
+- Nhung can hieu no khong tu dong thay cho networking logic.
+
+## 29. Loi sai pho bien
+
+- Event phat nhieu lan khong can thiet.
+- Source vua phat event vua goi truc tiep UI.
+- Listener qua lon, lam qua nhieu viec.
+- Quen huy dang ky.
+
+## 30. Tu duy rat quan trong
+
+- Event la cach thong bao.
+- Listener la noi phan ung.
+- Source khong can biet ben ngoai co bao nhieu listener.
+- Day chinh la cai dep cua observer pattern.
+
+## 31. Tu kiem tra
+
+1. Vi sao observer pattern hop cho UI?
+2. Vi sao observer pattern hop cho achievement?
+3. Khi nao khong can event?
+4. Vi sao phai huy dang ky?
+5. Vi sao event giup giam phu thuoc?
 public class HealthBarUI : MonoBehaviour
 {
     [SerializeField] private PlayerHealth playerHealth;

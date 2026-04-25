@@ -254,3 +254,77 @@ public class PhysicsMover : MonoBehaviour
 
 - Khi len giai doan sau, input se lien quan manh toi UI, animation, pooling, save system va state machine.
 - Neu nen tang input duoc tach ro tu bay gio, cac bai sau se de hieu hon rat nhieu.
+
+## 29. Input la noi lo y dinh, khong phai noi giam sat moi he thong
+
+- Input reader nen gon.
+- No doc lenh.
+- No khong can biet tat ca noi dung game se xu ly lenh do the nao.
+- Day la cach giu code co lop lang ro rang.
+
+## 30. Action-based thinking giup code song lau hon
+
+- Hom nay la Space de nhay.
+- Mai co the la nut A tren tay cam.
+- Neu game nghi theo `Jump`, doi mapping se nhe hon nhieu.
+- Tu duy nay co gia tri lau dai hon viec hoc thuoc API cu the.
+
+## 31. Input va state machine rat hop nhau
+
+- Cung mot nut co the co nghia khac o menu va trong gameplay.
+- State machine giup giai quyet su khac nhau do.
+- Vi vay input khong nen duoc xu ly mot cach vo dieu kien trong moi trang thai.
+
+## 32. Input va UI can co gioi han ro rang
+
+- Khi menu mo, gameplay co the can dung.
+- Khi cutscene chay, mot so input co the bi khoa.
+- Neu khong co gioi han, nguoi choi se gap hanh vi ky la.
+- Day la bug pho bien nhung co the tranh duoc neu nghi som.
+
+## 33. Input va cam giac dieu khien
+
+- Cung mot co che movement, cach doc input khac co the cho cam giac khac.
+- Input nho, on dinh va it tre giup game choi da hon.
+- Day la ly do input la mot phan cua game feel, khong chi la phan ky thuat.
+
+## 34. Input buffer va coyote time la cac tang tinh te
+
+- Day la cac khai niem nang cao hon.
+- Nhung chung cho thay input trong game that khong hoan toan la doc phim mot cach co hoc.
+- Ta thuong dieu chinh de cam giac choi tot hon.
+
+## 35. Input va replay hoac AI
+
+- Khi input duoc tach thanh action, ta de hon trong viec ghi lai lenh.
+- Cung de hon khi AI gia lap dau vao giong nguoi choi.
+- Day la loi ich kien truc thuong khong thay ngay luc moi hoc.
+
+## 36. Input tot giup cac he thong sau don gian hon
+
+- Movement nhan lenh sach hon.
+- Animation nhan thong tin ro hon.
+- UI biet khi nao can mo dong.
+- State machine biet luc nao chuyen trang thai.
+- Save va settings de doi key bind hon.
+
+## 37. Debug input can nhin ca code va tinh huong game
+
+- API co the dung nhung state lai sai.
+- Phim co the nhan nhung object bi pause.
+- Input co the vao nhung movement dang bi khoa.
+- Day la ly do debug input can hoi ca "game dang o trang thai nao".
+
+## 38. Bai hoc lon nhat
+
+- Khong nen de input tro thanh mot ma tran day `if` mo ho.
+- Nen bien no thanh mot lop ro nghia, de doan, va de noi voi cac he thong khac.
+
+## 39. Neu phai ghi nho mot cau
+
+- Input tot la input bieu dien dung y dinh cua nguoi choi va de gameplay xu ly no mot cach ro rang.
+
+## 40. Tong ket bo sung
+
+- Input la mot lop nen tang cua game feel va kien truc.
+- Hoc no som theo cach tach ro se giup rat nhieu bai sau de hon.

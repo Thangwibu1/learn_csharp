@@ -297,3 +297,76 @@ public class BlinkExample : MonoBehaviour
 
 - Sau khi hieu `MonoBehaviour`, ban se de tiep can `Physics`, `Input`, `UI`, `Animation`, `Observer Pattern` va `State Machine`.
 - Tat ca cac chu de do deu duoc dat len tren nen tang lifecycle nay.
+
+## 31. MonoBehaviour day ban nghi theo thoi diem
+
+- Cung mot logic dat o hai ham khac nhau co the cho ket qua khac nhau.
+- Vi vay hoc lifecycle la hoc cach dat code dung thoi diem.
+- Day la ky nang cot loi trong Unity.
+
+## 32. Khi nao can tranh Update
+
+- Khi logic khong can cap nhat moi frame.
+- Khi co the chay theo event.
+- Khi chi can xu ly moi vai giay.
+- Khi UI chi can doi khi du lieu doi.
+- Day la cach code nhe hon va ro hon.
+
+## 33. MonoBehaviour khong thay the thiet ke tot
+
+- Ke thua `MonoBehaviour` khong tu dong lam code dep.
+- Ban van can tach trach nhiem.
+- Van can dat ten ro rang.
+- Van can chon lifecycle phu hop.
+- Day la cong cu, khong phai phep mau.
+
+## 34. Cang hieu lifecycle, cang debug nhanh
+
+- Script chua khoi tao? Nhin `Awake` va `Start`.
+- Event bi nghe trung? Nhin `OnEnable` va `OnDisable`.
+- Camera giat? Nhin `LateUpdate`.
+- Vat ly la? Nhin `FixedUpdate`.
+- Day la mau debug rat co he thong.
+
+## 35. Script component song trong scene chu khong song doc lap
+
+- No phu thuoc object dang active khong.
+- No phu thuoc component co enabled khong.
+- No phu thuoc cac component khac co san khong.
+- Day la ly do debug Unity can nhin ca editor lan code.
+
+## 36. Moi ham lifecycle la mot loi hua cua engine
+
+- Unity noi rang: toi se goi ham nay o thoi diem nay.
+- Nhiem vu cua ban la dung no cho dung viec.
+- Neu dat sai cho, bug de xuat hien.
+- Neu dat dung cho, code se ro va de mo rong hon.
+
+## 37. Coroutines la cau noi giua frame va thoi gian
+
+- Khong phai logic nao cung la moi frame hoac moi buoc vat ly.
+- Co logic la doi 0.2 giay, doi 3 giay, doi hieu ung xong.
+- Coroutine la cach Unity giup ban viet dieu do rat tu nhien.
+- Day la suc manh rat de dung cua MonoBehaviour.
+
+## 38. Event va lifecycle di cung nhau
+
+- Dang ky trong `OnEnable`.
+- Huy dang ky trong `OnDisable`.
+- Quy tac nay de nho va rat huu dung.
+- No giam nhieu bug kho tim khi object bi tat bat lai.
+
+## 39. MonoBehaviour va test scene
+
+- Khi hoc lifecycle, nen co scene nho de test rieng.
+- Mot object logger.
+- Mot object follower.
+- Mot rigidbody.
+- Mot nut tat bat object.
+- Cach hoc truc quan nay giup hieu nhanh hon doc ly thuyet suong.
+
+## 40. Tong ket bo sung
+
+- `MonoBehaviour` la khuon vao he thong scene.
+- Lifecycle la ban do thoi diem.
+- Nam chac hai diem nay, ban se viet script Unity co y thuc hon nhieu.

@@ -246,3 +246,67 @@ public class PushBody : MonoBehaviour
 
 - Sau khi hieu vat ly, ban se thay input khong chi la doc phim.
 - Input can duoc dua vao dung cho de dieu khien transform, rigidbody va animation mot cach on dinh.
+
+## 31. Vat ly khong phai luc nao cung can choi that
+
+- Co game dieu khien bang transform van on.
+- Co game can vat ly day du de co cam giac day, roi, nay.
+- Chon dung muc vat ly la mot quyet dinh thiet ke gameplay, khong chi la ky thuat.
+
+## 32. Collider la mo hinh gameplay, khong phai mo hinh my thuat
+
+- Nguoi moi hay co gang cho collider khop tung chi tiet.
+- Nhung game can su on dinh va de kiem soat.
+- Collider don gian thuong tot hon cho gameplay.
+- Day la bai hoc thuc dung rat quan trong.
+
+## 33. Rigidbody la cach giao quyen cho engine vat ly
+
+- Khi gan rigidbody, ban noi voi Unity rang object nay duoc mo phong.
+- Tu luc do, ban nen ton trong quy tac cua he vat ly.
+- Neu vua giao engine, vua tu keo bang transform lien tuc, no se roi vao xung dot.
+
+## 34. Trigger la cong cu gameplay cuc manh
+
+- Trigger khong can chan van de van co gia tri lon.
+- Rat nhieu co che game hay nhat dung trigger.
+- Nhat vat pham, mo cua, doi nhac nen, bat cutscene, tinh diem checkpoint.
+- Day la cach nghi vuot ra ngoai va cham vat ly thuần.
+
+## 35. Layer giup game it ro hon
+
+- Khong phai object nao cung nen va cham voi nhau.
+- Layer giup ta khai bao y dinh mot cach tap trung.
+- Khi project lon, day la vat bat ly than gian de tranh bug kho chiu.
+
+## 36. Raycast la mat cua gameplay
+
+- Ban co the xem raycast nhu cach game "nhin" ra phia truoc, phia duoi, theo huong sung.
+- No don gian nhung rat manh.
+- Nguoi moi nen tap raycast som vi no xuat hien o rat nhieu bai toan.
+
+## 37. Ground check la bai hoc debug rat hay
+
+- Neu nhan vat nhay khong dung, nhiem vu dau tien la xem ground check co tin cay khong.
+- Day la bai toan ket hop physics, callback, raycast va state.
+- Hoc ky diem nay se giup ban do vat ly tot hon.
+
+## 38. Continuous collision la nhac ban ve gioi han mo phong
+
+- Engine vat ly khong phai vo han chi tiet.
+- Vat qua nhanh co the xuyen.
+- Day nhac ban rang mo phong luon co gioi han va can cau hinh hop ly.
+
+## 39. Scene vat ly tot thuong rat de doan
+
+- Ground la ground.
+- Trigger duoc dat ten ro.
+- Layer duoc tach ro.
+- Collider khong qua ky la.
+- Physics material duoc dung co chu dich.
+- Cang ro rang, cang de debug.
+
+## 40. Tong ket bo sung
+
+- Vat ly Unity la su ket hop cua hinh dang, khoi luong, luc va quy tac tuong tac.
+- Hoc vat ly tot la hoc cach dat object vao he thong nay mot cach dung muc dich.

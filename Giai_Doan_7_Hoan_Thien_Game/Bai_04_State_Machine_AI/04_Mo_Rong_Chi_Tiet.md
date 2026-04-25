@@ -78,6 +78,166 @@ public class EnemyBrain : MonoBehaviour
         {
             case EnemyState.Idle:
                 UpdateIdle();
+
+## 9. Diem yeu cua enum state machine
+
+- Nhanh de bat dau.
+- Nhung de bi phinh to khi state tang len.
+- `switch` co the rat dai.
+- Logic tung state de bi tron lan vao nhau.
+
+## 10. Uu diem cua state class rieng
+
+- Moi state mot file hoac mot class rieng.
+- Tranh `switch` qua lon.
+- De test tung state.
+- De thay doi hanh vi ma khong anh huong nhieu toi state khac.
+
+## 11. Enter Tick Exit co y nghia gi
+
+- `Enter`: chay mot lan khi vao state.
+- `Tick`: chay lien tuc trong luc dang o state.
+- `Exit`: chay mot lan khi roi state.
+
+Day la bo khung rat de suy nghi.
+
+## 12. Vi sao can Enter
+
+- Co nhieu hanh vi chi can lam mot lan.
+- Vi du bat animation chase.
+- Vi du reset attack timer.
+- Vi du in log.
+
+Neu dat het vao `Tick`, ban de bi lap lai viec khong can thiet moi frame.
+
+## 13. Vi sao can Exit
+
+- Co nhieu state can don dep truoc khi roi di.
+- Vi du tat hieu ung canh bao.
+- Vi du reset du lieu tam.
+- Vi du ngat mot coroutine cu.
+
+## 14. State machine va trach nhiem ro rang
+
+- State machine quyet dinh "dang o hanh vi nao".
+- Movement system quyet dinh "di nhu the nao".
+- Animation system quyet dinh "hien ra sao".
+- Weapon system quyet dinh "gay sat thuong ra sao".
+
+Khong nen de state machine lam het moi thu.
+
+## 15. State machine khong thay the moi he thong khac
+
+- Day la diem nguoi moi hay nham.
+- State machine la mot lop dieu phoi hanh vi.
+- No khong phai ca AI day du.
+
+## 16. Dieu kien chuyen state nen dat o dau
+
+- Thuong dat trong state hien tai.
+- Hoac dat mot phan o state machine trung tam.
+- Dieu quan trong la co quy tac ro rang va nhat quan.
+
+## 17. Priority cua state
+
+- Neu vua du range attack, vua het mau thi state nao uu tien?
+- Thuong `Dead` phai uu tien cao nhat.
+- Sau do den state can khan cap nhu stun.
+
+## 18. Cach tranh chuyen state loạn
+
+- Khong goi `ChangeState` lien tuc o nhieu noi vo toi va.
+- Dat rang buoc ro.
+- Sau khi doi state, neu can thi `return` ngay.
+
+## 19. State transition graph
+
+- Day la so do luong chuyen state.
+- Ve duoc graph thi code se de hon.
+
+Vi du:
+
+- Idle -> Patrol
+- Patrol -> Chase
+- Chase -> Attack
+- Attack -> Chase
+- Chase -> ReturnHome
+- ReturnHome -> Patrol
+- Any -> Dead
+
+## 20. `Any -> Dead` la gi
+
+- Nghia la tu bat ky state nao, neu dieu kien chet xay ra, AI vao `Dead`.
+- Day la mot quy tac rat thuong gap.
+
+## 21. State machine va animation event
+
+- Co the state doi truoc.
+- Animation theo sau.
+- Hoac animation event thong bao luc gay sat thuong trong Attack state.
+
+Can phan biet:
+
+- animation la bieu hien
+- state la logic
+
+## 22. State machine va cooldown
+
+- Attack state rat hay can cooldown.
+- Neu khong, quai co the tan cong moi frame.
+- Cooldown la mot du lieu phu tro cho state.
+
+## 23. State machine va pathfinding
+
+- Chase state thuong goi he thong pathfinding hoac movement.
+- State khong can tu tinh toan duong di phuc tap neu da co he thong rieng.
+
+## 24. State machine va sensing
+
+- AI can biet khi nao thay player.
+- Viec nay co the tach thanh sensing system.
+- State machine chi doc ket qua sensing.
+
+## 25. Loi hay gap khi moi hoc
+
+- Moi frame goi `ChangeState(currentState)`.
+- Quen `Exit`.
+- Quen `Enter`.
+- State truy cap qua nhieu thu khong lien quan.
+- Condition chong cheo lam AI nhay state lien tuc.
+
+## 26. Giai phap giam phu thuoc
+
+- Truyen vao state chi nhung gi no can.
+- Khong de state tu tim moi thu qua `FindObjectOfType`.
+- Dung reference ro rang.
+
+## 27. Cach dat ten state de doc de hieu
+
+- Dat ten theo hanh vi.
+- `PatrolState`, `ChaseState`, `AttackState`, `DeadState`.
+- Tranh ten mo ho.
+
+## 28. Khi nao khong can state machine phuc tap
+
+- Enemy rat don gian.
+- Chi co 2 hanh vi nho.
+- Du an prototype cuc nho.
+
+Nhung ngay ca khi do, state machine don gian van thuong de doc hon `if else` lung tung.
+
+## 29. Bai hoc kien truc
+
+- State machine la mot cach dong goi hanh vi.
+- Day la mot buoc rat tot de di tu code vo to chuc sang code co kien truc.
+
+## 30. Tu kiem tra
+
+1. Vi sao `Dead` thuong uu tien cao nhat?
+2. Vi sao `Enter`, `Tick`, `Exit` de suy nghi?
+3. Khi nao nen tach state thanh class rieng?
+4. Vi sao state machine giam do roi cua `Update()`?
+5. Vi sao state machine rat hop cho AI game?
                 break;
             case EnemyState.Chase:
                 UpdateChase();

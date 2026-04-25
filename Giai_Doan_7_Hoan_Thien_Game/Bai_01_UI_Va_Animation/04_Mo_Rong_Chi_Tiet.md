@@ -1,249 +1,429 @@
-# Mo rong chi tiet: UI va Animation
+# Mở rộng chi tiết: UI và Animation
+
+## 1. Vai trò của UI trong cảm nhận gameplay
+
+- UI không chỉ hiển thị thông tin.
+- UI còn điều hướng sự chú ý của người chơi.
+- UI tốt giúp người chơi ra quyết định nhanh hơn.
+- UI tệ làm người chơi bối rối ngay cả khi gameplay đúng.
+- Trong nhiều game, cảm giác "dễ hiểu" đến từ UI nhiều hơn người mới nghĩ.
+
+## 2. Vai trò của animation trong việc giải thích hành động
+
+- Animation cho biết hành động nào đang diễn ra.
+- Animation cho biết hành động nào sắp diễn ra.
+- Animation cho biết hành động vừa kết thúc ra sao.
+- Khi nhân vật lùi lại, người chơi hiểu rằng vừa bị đánh.
+- Khi quái giơ tay trước, người chơi hiểu rằng đòn đánh sắp tới.
+
+## 3. UI và animation cùng nhau tạo phản hồi
+
+- Người chơi bấm nút.
+- Dữ liệu gameplay thay đổi.
+- UI đổi số hoặc thanh bar.
+- Animation phát phản hồi.
+- Âm thanh có thể phát thêm.
+- Tổ hợp này tạo cảm giác game "có lực".
 
-## 1. UI va Animation la lop giup game de cam nhan
+## 4. Một ví dụ rất cơ bản
 
-- Logic dung la chua du de tro choi tro nen de choi.
-- UI giup nguoi choi hieu trang thai game.
-- Animation giup hanh dong co suc song.
-- Hai phan nay thuong la diem nguoi moi danh gia thap, nhung lai quyet dinh cam giac trai nghiem rat manh.
+- Người chơi uống bình máu.
+- Giá trị máu tăng từ 40 lên 70.
+- Thanh máu chạy mượt lên.
+- Text máu đổi từ `40/100` sang `70/100`.
+- Một icon hồi máu chớp ngắn.
+- Nhân vật phát animation nhận hiệu ứng.
 
-## 2. UI la gi trong game
+## 5. Phân tầng trách nhiệm nên nghĩ thế nào
+
+- Gameplay logic giữ dữ liệu thật.
+- UI chỉ trình bày dữ liệu đó.
+- Animation biểu diễn trạng thái hoặc phản hồi.
+- Input debug chỉ dùng để kiểm tra nhanh.
+- Đừng gộp tất cả vào một file nếu trách nhiệm bắt đầu lẫn nhau.
 
-- UI la giao dien nguoi dung.
-- No bao gom thanh mau, diem so, nut bam, menu, inventory, thong bao.
-- UI tot giup nguoi choi biet minh dang o dau va dang lam gi.
-- UI xau khien game dung logic van kho choi.
+## 6. Vì sao người mới hay làm UI khó bảo trì
+
+- Gắn trực tiếp mọi thứ vào `Update()`.
+- Viết logic gameplay ngay trong script UI.
+- Không đặt tên rõ cho object trên Canvas.
+- Không quản lý reference cẩn thận.
+- Không suy nghĩ về độ phân giải và anchor.
 
-## 3. Unity UI van la object va component
+## 7. Canvas là bề mặt hiển thị nhưng không phải phép màu
+
+- Canvas giúp Unity vẽ UI.
+- Nhưng bản thân bố cục vẫn cần người thiết kế rõ ràng.
+- Nếu anchor sai, UI vẫn vỡ.
+- Nếu hierarchy rối, vẫn khó đọc.
+- Nếu script lẫn trách nhiệm, vẫn khó sửa.
 
-- UI cung theo tu duy GameObject va Component.
-- Mot button la object co `RectTransform`, `Image`, `Button`.
-- Mot dong chu co `RectTransform` va component text phu hop.
-- Dieu nay co nghia la kien thuc bai truoc van giu nguyen gia tri.
+## 8. Nhóm UI thường gặp trong game
+
+- HUD trong lúc chơi.
+- Main menu trước khi chơi.
+- Pause menu khi tạm dừng.
+- Popup thông báo ngắn.
+- Inventory.
+- Quest log.
+- Cửa sổ nâng cấp.
+- Màn hình thua hoặc thắng.
 
-## 4. Canvas la noi chua UI
+## 9. HUD cần ưu tiên thông tin gì
 
-- Nhieu thanh phan UI duoc dat trong `Canvas`.
-- Canvas la khung de Unity ve giao dien.
-- Ban thuong se co `Canvas`, `Canvas Scaler` va `Graphic Raycaster`.
-- Khi hieu canvas, ban se de sap xep panel va bo cuc hon.
+- Máu.
+- Năng lượng hoặc mana.
+- Đạn hoặc tài nguyên chiến đấu.
+- Coin hoặc score nếu liên quan trực tiếp.
+- Kỹ năng đang hồi chiêu.
+- Trạng thái nguy hiểm nếu cần.
 
-## 5. RectTransform la gi
+## 10. Không phải thứ gì cũng phải hiện liên tục
 
-- UI thuong dung `RectTransform` thay vi `Transform` thuong.
-- No van co vi tri, xoay va kich thuoc.
-- Ngoai ra no co anchor, pivot, width, height.
-- Day la ly do UI co bo cuc theo man hinh.
+- Quest log dài không cần hiện mọi lúc.
+- Bảng cài đặt không cần nằm trên HUD.
+- Hướng dẫn phức tạp có thể hiện theo ngữ cảnh.
+- Mục tiêu là giảm nhiễu nhưng vẫn đủ thông tin.
 
-## 6. Anchor la y tuong cuc ky quan trong
+## 11. Nguyên tắc gần, rõ, nhất quán
 
-- Anchor xac dinh thanh phan UI bam vao dau cua man hinh hoac object cha.
-- Vi du thanh mau bam goc tren trai.
-- Vi du nut pause bam goc tren phai.
-- Neu anchor dat sai, UI co the vo bo cuc khi doi do phan giai.
-- Nguoi moi nen hoc anchor som de tranh UI "chay linh tinh".
+- Thông tin quan trọng đặt gần vùng người chơi dễ nhìn.
+- Màu sắc nên nhất quán giữa các trạng thái.
+- Text nên ngắn và rõ.
+- Kích thước nên phù hợp với tầm quan sát.
+- Icon nên dễ phân biệt.
 
-## 7. Canvas Scaler va do phan giai
+## 12. Thanh máu là ví dụ phổ biến nhưng dễ làm ẩu
 
-- Game co the chay tren nhieu kich thuoc man hinh.
-- `Canvas Scaler` giup UI co gian hop ly.
-- Neu bo qua phan nay, UI co the qua to tren may nay va qua nho tren may khac.
-- Day la ly do UI khong chi la keo tha cho dep mat.
+- Chỉ cần hiển thị giá trị đúng là chưa đủ.
+- Cần đủ tương phản với nền.
+- Cần thay đổi dễ nhận biết khi giảm mạnh.
+- Nên cân nhắc có số hay không.
+- Nên xử lý cả trường hợp `maxHealth = 0` để tránh lỗi chia.
 
-## 8. Panel, text, image, button
+## 13. Text số liệu và thanh bar nên phối hợp ra sao
 
-- `Panel` thuong la khung nen hoac hop chua.
-- `Image` dung de hien icon, khung, thanh bar.
-- `Text` hoac thanh phan text hien chu.
-- `Button` cho phep bat su kien bam.
-- Tu nhung manh nho nay, ban lap thanh menu, HUD, inventory, popup.
+- Thanh bar giúp đọc nhanh tương đối.
+- Text giúp đọc chính xác tuyệt đối.
+- Kết hợp cả hai rất hữu ích với chỉ số quan trọng.
+- Nhưng quá nhiều số cũng có thể gây rối.
 
-## 9. HUD va menu khac nhau
+## 14. Màu sắc nên phục vụ ý nghĩa
 
-- HUD la giao dien hien trong luc choi.
-- Menu la giao dien phuc vu dieu huong hay cai dat.
-- Vi du HUD gom mau, vang, dan con lai.
-- Vi du menu gom pause, settings, restart.
-- Tach ro hai loai nay giup code UI ro hon.
+- Đỏ thường gợi nguy hiểm.
+- Xanh lá thường gợi an toàn hoặc hồi phục.
+- Xanh dương thường gợi năng lượng hoặc mana.
+- Vàng thường gợi tiền thưởng hoặc hiếm.
+- Dù vậy, phải kiểm tra tương phản chứ không chỉ dựa vào thói quen.
 
-## 10. UI khong nen polling vo toi va
+## 15. Animation cho nhân vật khác animation cho UI
 
-- Nguoi moi thuong cap nhat text mau bang `Update()` moi frame.
-- Neu gia tri mau it thay doi, day la polling lang phi.
-- Cach tot hon la cap nhat khi du lieu that su doi.
-- Dieu nay dan toi observer pattern va event.
+- Animation nhân vật thường gắn với hành động gameplay.
+- Animation UI thường gắn với phản hồi hoặc điều hướng người dùng.
+- Cả hai đều cần đúng nhịp, nhưng mục tiêu trình bày khác nhau.
 
-## 11. Vi du cap nhat UI mau theo su kien
+## 16. Ví dụ animation nhân vật
 
-- `PlayerHealth` doi mau.
-- No phat su kien `OnHealthChanged`.
-- `HealthBarUI` dang ky nghe su kien.
-- Khi nhan su kien, UI doi slider hoac image fill.
-- Khong can frame nao cung hoi "mau co doi chua".
+- Idle.
+- Run.
+- Jump.
+- Attack.
+- Hurt.
+- Die.
 
-## 12. Animation la gi
+## 17. Ví dụ animation UI
 
-- Animation la su thay doi thuoc tinh theo thoi gian.
-- No co the thay doi hinh anh, vi tri, scale, mau sac, thong so.
-- Trong game, animation giup nhan vat chay, nhay, tan cong, chet.
-- UI cung co animation nhu mo panel, rung canh bao, hien thong bao.
+- Panel trượt ra vào.
+- Nút phóng to nhẹ khi hover.
+- Popup fade in rồi fade out.
+- Thanh máu giảm mượt.
+- Chữ cảnh báo nhấp nháy.
 
-## 13. Animator va Animation Clip
+## 18. Vấn đề khi gắn logic quá chặt với Animator
 
-- `Animation Clip` la du lieu chuyen dong cu the.
-- `Animator` la bo dieu khien chuyen giua cac clip.
-- Trong `Animator Controller`, ban tao state va transition.
-- Day rat gan voi tu duy state machine.
+- Khó debug khi transition quá nhiều.
+- Dễ phát sinh logic ẩn.
+- Người mới hay không nhớ state nào đang chạy.
+- Nếu gameplay quan trọng phụ thuộc hoàn toàn vào animation event, lỗi sẽ khó thấy hơn.
 
-## 14. Parameter cua Animator
+## 19. Cách chia hợp lý
 
-- Co the co `bool`, `float`, `int`, `trigger`.
-- Vi du `isRunning`, `speed`, `isGrounded`, `Attack`.
-- Script gameplay thuong dat parameter, Animator tu chuyen state.
-- Cach nay giup tach gameplay va bieu dien.
+- Script gameplay quyết định dữ liệu và trạng thái thật.
+- Animator nhận tham số để biểu diễn.
+- UI listener nhận dữ liệu đã được xác nhận.
+- Như vậy đường đi của thông tin rõ hơn.
 
-## 15. Animation khong phai gameplay logic
+## 20. Khi nào cập nhật UI trong `Update()` vẫn chấp nhận được
 
-- Animation lam cho game nhin hay hon.
-- Nhung gameplay logic quan trong khong nen an sau trong thao tac kho debug.
-- Vi du sat thuong nen do script quyet dinh ro rang.
-- Animation co the dong vai tro kich hoat thoi diem thong qua event neu can, nhung khong nen de mo ho.
+- Demo rất nhỏ.
+- Dữ liệu thay đổi gần như liên tục.
+- Chi phí cập nhật cực thấp.
+- Bạn đang cần thử ý tưởng thật nhanh.
 
-## 16. Vi du animator cho nhan vat
+## 21. Khi nào nên dừng việc phụ thuộc vào `Update()`
 
-- Khi toc do lon hon 0, `isRunning = true`.
-- Khi toc do bang 0, `isRunning = false`.
-- Khi bam tan cong, goi `SetTrigger("Attack")`.
-- Khi mau ve 0, dat `isDead = true`.
-- Day la luong ket noi co ban giua script va animation.
+- Khi có nhiều text, icon, panel.
+- Khi dữ liệu chỉ đổi lúc hiếm.
+- Khi xuất hiện bug do thứ tự cập nhật.
+- Khi muốn tái sử dụng UI giữa nhiều scene.
+- Khi bạn cần test độc lập từng phần.
 
-## 17. Blend tree la gi
+## 22. Sự kiện là một hướng tự nhiên
 
-- Blend tree giup noi suy giua nhieu animation.
-- Vi du di cham, di vua, chay nhanh dua tren toc do.
-- Day la khai niem nang cao hon mot chut, nhung rat huu ich khi game can chuyen dong mem.
+- Dữ liệu đổi thì phát thông báo.
+- UI đang nghe thì tự cập nhật.
+- Không phải mọi frame đều đi hỏi lại.
+- Điều này giúp code rõ ý hơn.
 
-## 18. Animation cho UI
+## 23. Nhưng event cũng cần kỷ luật
 
-- Panel pause co the fade in.
-- Nut co the phong to nhe khi hover.
-- Thanh mau co the rung khi sap het.
-- Thong bao achievement co the truot vao roi bien mat.
-- Nhung chi tiet nho nay lam game co cam giac hoan chinh hon rat nhieu.
+- Phải subscribe đúng lúc.
+- Phải unsubscribe đúng lúc.
+- Phải cẩn thận với object bị destroy.
+- Phải tránh listener cũ còn tồn tại.
 
-## 19. UI va thiet ke thong tin
+## 24. Hệ thống pause là ví dụ tốt để học UI
 
-- Khong phai cai gi cung nen dua len man hinh.
-- UI tot la UI uu tien thong tin quan trong.
-- Vi du game hanh dong can mau, dan, ky nang san sang.
-- Qua nhieu thong tin se roi mat.
-- Day la phan beginner can tap tu duy som.
+- Có text hoặc panel pause.
+- Có thể dừng thời gian game.
+- Có animation mở panel.
+- Có nút resume.
+- Có thể thêm nút settings hoặc quit về menu.
 
-## 20. UI va state game
+## 25. Pause không chỉ là hiện panel
 
-- Khi pause, panel pause hien.
-- Khi game over, panel game over hien.
-- Khi mo inventory, gameplay co the tam dung.
-- UI phan anh state game, va cung co the la cach nguoi choi thay doi state game.
-- Day la ly do UI va state machine rat hop voi nhau.
+- Nếu chỉ hiện panel mà gameplay vẫn chạy, trải nghiệm sai.
+- Nếu dừng thời gian mà UI animation cũng dừng ngoài ý muốn, cần xem lại `unscaledDeltaTime`.
+- Đây là bài học rất thực tế về tách game time và UI time.
 
-## 21. Vi du script UI co ban
+## 26. `Time.deltaTime` và `Time.unscaledDeltaTime`
 
-```csharp
-using UnityEngine;
-using UnityEngine.UI;
+- `Time.deltaTime` bị ảnh hưởng bởi `timeScale`.
+- `Time.unscaledDeltaTime` không bị ảnh hưởng bởi `timeScale`.
+- UI pause thường cần animation chạy dù game time đang 0.
+- Vì vậy nhiều UI animation nên dùng `unscaledDeltaTime`.
 
-public class HealthBarUI : MonoBehaviour
-{
-    [SerializeField] private Image fillImage;
+## 27. Chuyển động mượt bằng nội suy
 
-    public void SetRatio(float ratio)
-    {
-        fillImage.fillAmount = ratio;
-    }
-}
-```
+- `Lerp` phù hợp cho nhiều hiệu ứng UI nhỏ.
+- Dùng cho panel trượt.
+- Dùng cho màu đổi dần.
+- Dùng cho scale hoặc alpha.
+- Nhưng cần kiểm soát điều kiện dừng hợp lý.
 
-- Script nay don gian va tap trung vao mot viec duy nhat la hien thanh mau.
+## 28. Khi nên dùng Animator cho UI
 
-## 22. Vi du script noi voi Animator
+- Khi có nhiều trạng thái rõ ràng.
+- Khi designer muốn chỉnh trực quan.
+- Khi cần timeline hoặc keyframe cụ thể.
+- Khi cùng một panel có nhiều animation được tái sử dụng.
 
-```csharp
-using UnityEngine;
+## 29. Khi nên dùng script cho UI animation
 
-public class PlayerAnimationController : MonoBehaviour
-{
-    [SerializeField] private Animator animator;
-    [SerializeField] private Rigidbody2D body;
+- Khi hiệu ứng đơn giản.
+- Khi muốn tính theo dữ liệu runtime.
+- Khi cần ít overhead hơn trong setup.
+- Khi muốn debug logic trực tiếp trong code.
 
-    private void Update()
-    {
-        animator.SetFloat("Speed", Mathf.Abs(body.linearVelocity.x));
-    }
-}
-```
+## 30. Tổ chức hierarchy UI nên gọn
 
-- Script nay doc van toc va gui thong tin sang Animator.
-- No khong tu di chuyen nhan vat.
-- Day la vi du tach trach nhiem dep.
+- `Canvas`
+- `HUDRoot`
+- `Bars`
+- `TopRightCounters`
+- `PausePanel`
+- `HintPanel`
+- `PopupRoot`
 
-## 23. Animation event co nen dung khong
+## 31. Đặt tên object rõ ràng giúp tiết kiệm rất nhiều thời gian
 
-- Co the dung de goi ham dung khoanh khac.
-- Vi du danh kiem thi phat sat thuong o frame cham trung.
-- Nhung khong nen lam dung cho logic qua quan trong neu kho theo doi.
-- Nguoi moi nen dung tiet che va co chu thich ro rang.
+- `HealthBar`
+- `EnergyBar`
+- `CoinText`
+- `PauseLabel`
+- `HintText`
+- `PausePanel`
+- `QuestToast`
 
-## 24. UI va save system
+## 32. Sai lầm thường gặp với slider
 
-- Menu settings co the doi am luong, do nhay chuot, ngon ngu.
-- Cac gia tri nay thuong can luu lai.
-- UI la noi nguoi choi sua, save system la noi giu lai ket qua.
-- Hai bai hoc nay lien quan rat thuc te.
+- Quên chỉnh min max.
+- Truyền số nguyên và chia nguyên ngoài ý muốn.
+- Gán nhầm slider của object khác.
+- Fill image bị mất reference.
 
-## 25. UI va observer pattern
+## 33. Sai lầm thường gặp với text
 
-- UI thuong la noi huong loi nhat khi dung event.
-- Mau doi thi UI cap nhat.
-- Diem doi thi UI cap nhat.
-- Achievement mo khoa thi popup hien len.
-- Day la cach lam UI phan ung thay vi polling.
+- Font quá nhỏ.
+- Màu thiếu tương phản.
+- Nội dung quá dài.
+- Không làm mới khi dữ liệu đổi.
+- Gộp nhiều loại thông tin vào một text rối mắt.
 
-## 26. Loi thuong gap cua nguoi moi
+## 34. Sai lầm thường gặp với animator
 
-- UI vo bo cuc khi doi do phan giai vi dat anchor sai.
-- Cap nhat UI moi frame du du lieu it doi.
-- De gameplay script sua qua nhieu chi tiet UI.
-- Animator va logic cung tranh nhau sua cung mot gia tri.
-- Khong tach HUD, menu va popup.
+- Transition condition mâu thuẫn.
+- Exit time làm animation trễ bất ngờ.
+- Trigger bị gọi lặp không kiểm soát.
+- Parameter đặt tên không thống nhất với script.
 
-## 27. Checklist khi UI loi
+## 35. UI phản hồi chậm cũng là một dạng lỗi cảm nhận
 
-- Object co nam trong Canvas khong?
-- Anchor da dat dung chua?
-- Canvas Scaler co hop ly khong?
-- Reference UI trong Inspector da gan chua?
-- Panel dang bat hay tat?
-- State game co dang khoa hien thi khong?
+- Nếu thanh máu đổi quá chậm, người chơi không tự tin.
+- Nếu coin tăng mà text phản hồi muộn, cảm giác nhặt thưởng yếu.
+- Nếu nút pause có độ trễ khó hiểu, người chơi mất tin tưởng.
 
-## 28. Bai tap tu hoc
+## 36. Vấn đề accessibility cơ bản cũng nên nghĩ tới
 
-- Tao HUD hien mau va vang.
-- Tao pause menu voi nut resume va quit.
-- Tao animation cho panel pause hien len nhe.
-- Tao animator cho nhan vat co Idle, Run, Jump.
-- Noi script movement voi parameter `Speed`.
+- Không chỉ dựa vào màu để phân biệt.
+- Có thể thêm icon hoặc text.
+- Kích thước chữ phải đủ đọc.
+- Tránh nhấp nháy quá mạnh kéo dài.
 
-## 29. Cau hoi tu kiem tra
+## 37. UI cho mobile và PC có thể khác nhau
 
-- Vi sao anchor quan trong?
-- Vi sao UI khong nen cap nhat bang `Update` moi frame neu khong can?
-- Animator va Animation Clip khac nhau the nao?
-- Vi sao nen tach gameplay va animation?
-- UI thuong ket hop rat tot voi observer pattern o diem nao?
+- Mobile cần vùng bấm lớn hơn.
+- PC có thể chịu mật độ thông tin cao hơn một chút.
+- Tỷ lệ màn hình khác nhau ảnh hưởng mạnh đến bố cục.
 
-## 30. Ket noi voi bai pooling va observer
+## 38. Prototype nhanh nhưng vẫn nên có cấu trúc tối thiểu
 
-- Popup, hieu ung, thong bao UI nhieu luc co the can object pooling.
-- UI cap nhat theo su kien se dan ban den observer pattern.
-- Do do bai UI va animation la cau noi rat tot den cac bai hoan thien game tiep theo.
+- Một script dữ liệu.
+- Một script HUD.
+- Một script input test.
+- Một script animation bridge nếu cần.
+- Như vậy đủ gọn mà vẫn không quá bừa.
+
+## 39. Prompt thiết kế 1
+
+Hãy tự trả lời:
+
+- Nếu game của bạn là action platformer, HUD nào là bắt buộc?
+- Nếu game là puzzle, thành phần nào có thể loại bỏ?
+
+## 40. Prompt thiết kế 2
+
+Nếu có quá nhiều UI trên màn hình, bạn sẽ:
+
+- gom nhóm thế nào
+- ẩn bớt khi nào
+- dùng màu ra sao để ưu tiên thông tin
+
+## 41. Prompt kiến trúc 1
+
+Viết sơ đồ ngắn:
+
+- `PlayerStats` cập nhật dữ liệu
+- `HudController` nhận dữ liệu
+- `CharacterAnimatorBridge` cập nhật animator
+- `PausePanelAnimator` điều khiển panel
+
+## 42. Prompt kiến trúc 2
+
+Nếu sau này thêm quest, minimap, cooldown skill, bạn sẽ mở rộng cấu trúc hiện tại ra sao mà không làm `HudController` thành file khổng lồ?
+
+## 43. Tình huống thực chiến 1
+
+Thanh máu đúng ở Scene A nhưng sai ở Scene B.
+
+Bạn cần kiểm tra:
+
+- prefab HUD có giống nhau không
+- reference có bị mất không
+- scene có object trùng lặp không
+- script có đang subscribe hai lần không
+
+## 44. Tình huống thực chiến 2
+
+Pause panel mở đúng nhưng nút resume không bấm được.
+
+Các điểm cần kiểm tra:
+
+- `GraphicRaycaster`
+- object che click
+- `CanvasGroup`
+- trạng thái interactable
+- event system trong scene
+
+## 45. Tình huống thực chiến 3
+
+Animation nhân vật chạy được nhưng UI không đổi theo.
+
+Khả năng cao:
+
+- animator đang độc lập với gameplay
+- script HUD không nhận dữ liệu thật
+- dữ liệu thật không broadcast
+
+## 46. Mini project gợi ý 1
+
+Làm `Dungeon HUD Prototype` gồm:
+
+- máu
+- stamina
+- vàng
+- icon chìa khóa
+- panel pause
+- thông báo mở cửa
+
+## 47. Mini project gợi ý 2
+
+Làm `Boss Warning Demo` gồm:
+
+- thanh máu boss lớn ở đầu màn hình
+- animation hiện tên boss
+- màn hình rung nhẹ hoặc viền đỏ khi boss tấn công đặc biệt
+
+## 48. Mini project gợi ý 3
+
+Làm `Skill Cooldown Demo` gồm:
+
+- 3 icon kỹ năng
+- overlay radial giảm dần
+- text số giây còn lại
+- cảnh báo khi không đủ năng lượng
+
+## 49. Checklist tự review trước khi nộp bài
+
+- UI có dễ đọc không?
+- Dữ liệu có cập nhật đúng không?
+- Có null reference không?
+- Pause có thực sự dừng gameplay không?
+- Animation có đúng thời điểm không?
+- Layout có ổn khi đổi độ phân giải không?
+
+## 50. Tổng kết tư duy cốt lõi
+
+- UI giúp người chơi hiểu game.
+- Animation giúp người chơi cảm được game.
+- Cả hai phải phục vụ gameplay, không tách rời gameplay.
+- Khi tổ chức tốt, code dễ mở rộng hơn rất nhiều.
+- Khi làm ẩu, lỗi cảm nhận xuất hiện trước cả lỗi logic.
+
+## Câu hỏi ôn tập mở rộng
+
+### Câu 1
+
+Tại sao một game logic đúng vẫn có thể bị chê là khó chơi nếu UI yếu?
+
+### Câu 2
+
+Trong hệ thống pause, phần nào nên dùng `unscaledDeltaTime`?
+
+### Câu 3
+
+Khi nào thanh máu nên đổi màu và khi nào nên thêm hiệu ứng khác?
+
+### Câu 4
+
+Vì sao nên tách script input test khỏi script HUD?
+
+### Câu 5
+
+Nếu làm game thật, bạn sẽ thêm logging hoặc debug overlay ra sao cho UI?
+
+## Bài viết tự phản tư
+
+Viết từ 15 đến 25 dòng về chủ đề:
+
+"Điều khó nhất khi học UI và animation không phải là kéo thả component, mà là hiểu dữ liệu nào cần được nhìn thấy vào đúng thời điểm."

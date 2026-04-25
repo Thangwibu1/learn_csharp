@@ -254,3 +254,137 @@
 - Day la noi ban bieu dien cau truc cua game ra thanh hinh.
 - Cang quen editor, ban cang de lien ket tu duy code voi the gioi nhin thay.
 - Dieu nay rat quan trong khi chuyen sang scripting va debug.
+
+## 30. Cach doc mot scene khi vua mo vao
+
+- Hay nhin `Hierarchy` truoc de biet scene co nhung nhom object nao.
+- Tim cac object trung tam nhu `Player`, `Main Camera`, `Canvas`, `GameManager`.
+- Sau do chon tung object lon va doc `Inspector`.
+- Muc tieu la tra loi nhanh: scene nay dang duoc lap rap theo cach nao.
+- Khi lam du an nguoi khac, ky nang doc scene quan trong khong kem ky nang viet code.
+
+## 31. Quy tac dat ten nen dung som
+
+- Ten object nen cho biet vai tro.
+- Ten script nen cho biet hanh vi hoac trach nhiem.
+- Ten scene nen cho biet man hinh hoac co che.
+- Ten thu muc nen cho biet loai tai nguyen.
+- Dat ten tot la mot dang documentation song.
+
+## 32. Nen quan sat object theo thu tu nao
+
+1. Object dang nam o dau trong hierarchy?
+2. No co parent khong?
+3. Transform cua no co hop ly khong?
+4. No co nhung component nao?
+5. No co dang active khong?
+6. Console co bao loi lien quan khong?
+
+## 33. Khi nao can tao scene moi
+
+- Khi muon tach menu va man choi.
+- Khi muon co khu vuc test rieng.
+- Khi muon co mot scene nho de hoc mot co che.
+- Khi scene hien tai qua bon va kho debug.
+- Tach scene hop ly giup toc do thu nghiem nhanh hon.
+
+## 34. Scene test la thoi quen tot
+
+- Nguoi moi hay test moi thu trong mot scene duy nhat.
+- Cach nay nhanh roi dan tro nen bon.
+- Tao scene test cho tung bai hoc se de doi chieu hon.
+- Vi du scene test vat ly, scene test input, scene test UI.
+- Day la thoi quen rat thuc dung khi du an lon dan.
+
+## 35. Inspector khong chi de nhin
+
+- Day la noi ban chinh so du lieu runtime va edit time.
+- Ban co the gan reference bang keo tha.
+- Ban co the bat tat component de thu nghiem nhanh.
+- Ban co the xem script dang co bien nao mo ra cho designer.
+- Hieu Inspector giup ban viet script than thien hon voi editor.
+
+## 36. Khi nao can nghi den prefab
+
+- Khi mot object duoc lap lai nhieu lan.
+- Khi ban muon sua mot cho lan ra nhieu noi.
+- Khi enemy, coin, bullet, UI panel lap lai trong scene.
+- Khi copy thu cong bat dau gay moi met.
+- Day la dau hieu prefab se giup viec.
+
+## 37. Console la nguoi ban dong hanh
+
+- Nguoi moi hay so Console vi nhieu dong do.
+- Thuc ra day la noi giup ban nhin thay van de som nhat.
+- Khi script khong chay, Console thuong la noi co cau tra loi dau tien.
+- Khi object bi null, Console cho ten file va dong loi.
+- Hinh thanh phan xa mo Console se giup ban tien bo nhanh hon.
+
+## 38. Debug bang editor, khong chi bang code
+
+- Nhin `Inspector` de xem reference co null khong.
+- Nhin checkbox active de xem object co bi tat khong.
+- Nhin transform de xem object co nam qua xa khong.
+- Nhin layer va tag de doan duoc van de tuong tac.
+- Nhin camera de xem `Game` vi sao trong khac `Scene`.
+
+## 39. Cac loi editor nhin la biet
+
+- Scene chua luu.
+- Object ten mo ho.
+- Thu muc `Assets` bon xon.
+- Component thieu reference ma van de nguyen.
+- Camera chua dat dung goc.
+- Console day warning nhung khong ai doc.
+
+## 40. Bai tu quan sat mot scene la
+
+- Hay mo mot scene bat ky trong du an.
+- Dung viet code vọi.
+- Chi quan sat va tra loi:
+- Co bao nhieu nhom object chinh?
+- Scene nay co luong quan ly nhu the nao?
+- Object nao la logic, object nao la hien thi?
+- Day la cach hoc rat tot tu du an co san.
+
+## 41. Editor la cau noi giua code va design
+
+- Lap trinh vien viet script.
+- Designer can mot noi de chinh gia tri.
+- Editor chinh la noi hai ben gap nhau.
+- Vi vay code Unity tot thuong de du lieu hien trong Inspector mot cach co chu dich.
+- Hieu editor som se giup ban code de hop tac hon.
+
+## 42. Ky nang nho nhung loi nhat
+
+- Chon dung object truoc khi sua.
+- Doc ten object truoc khi doi gia tri.
+- Luu scene thuong xuyen.
+- Xem Console ngay khi co loi.
+- Dat file dung thu muc ngay khi tao.
+
+## 43. Mot ngay lam viec Unity thuong dien ra the nao
+
+- Mo project.
+- Mo scene dang lam.
+- Kiem tra `Console`.
+- Chon object can sua.
+- Chinh `Inspector` hoac script.
+- Nhan Play de test.
+- Quan sat `Game` va `Console`.
+- Thoat Play, luu thay doi that su.
+
+## 44. Ky luat editor giup code it loi hon
+
+- Scene gon gang giup tim object nhanh.
+- Dat ten tot giup debug reference nhanh.
+- Inspector ro rang giup it gan nham.
+- Project co thu muc hop ly giup tim asset nhanh.
+- Nhung dieu nay khong hao nho, no tac dong truc tiep den nang suat.
+
+## 45. Tong ket bo sung
+
+- Unity Editor khong phai phan phu.
+- No la noi to chuc du an, scene va object.
+- Nguoi hoc Unity tien bo nhanh la nguoi biet vua doc code vua doc editor.
+- Nam vung editor se giup cac bai sau nhe hon rat nhieu.
